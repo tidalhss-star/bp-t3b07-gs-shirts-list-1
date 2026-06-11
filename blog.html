@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="강서 셔츠룸 모음, 찐 리뷰와 시스템 분석. 강서구 셔츠룸의 모든 것. 010-6279-0862">
+    <meta name="keywords" content="강서 셔츠룸, 강서 셔츠룸 모음, 강서구 셔츠룸, 셔츠룸 추천, 강서 셔츠룸 가격, 강서 셔츠룸 후기">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <meta property="og:title" content="강서 셔츠룸 모음 - 찐 리뷰로 증명한다">
+    <meta property="og:description" content="강서 셔츠룸 모음, 가짜 리뷰는 없다. 오직 생생한 후기와 직설적인 평가. 지금 확인하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t3b07-gs-shirts-list-1.vercel.app">
+    <title>강서 셔츠룸 모음 | 블로그</title>
+    <style>
+        /* RESET & BASE */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        body {
+            font-family: 'Impact', 'Arial Black', 'Helvetica Neue', sans-serif;
+            background: #0d0d0d;
+            color: #f5f5f5;
+            line-height: 1.4;
+            min-height: 100vh;
+        }
+        a {
+            color: #e6ff00;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        a:hover {
+            color: #0d0d0d;
+            background: #e6ff00;
+            border-bottom: 2px solid #e6ff00;
+        }
+        img, svg {
+            max-width: 100%;
+            display: block;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* TYPOGRAPHY */
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            color: #e6ff00;
+            text-shadow: 4px 4px 0 #000;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #e6ff00;
+            border-left: 6px solid #e6ff00;
+            padding-left: 1rem;
+            margin: 2rem 0 1rem;
+        }
+        h3 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        /* LAYOUT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .full-bleed {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background: #1a1a1a;
+            padding: 2rem 0;
+        }
+
+        /* HEADER */
+        header {
+            background: #0d0d0d;
+            border-bottom: 4px solid #e6ff00;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #e6ff00;
+            letter-spacing: -1px;
+            border: none;
+        }
+        .logo span {
+            color: #fff;
+            background: #e6ff00;
+            padding: 0 0.3rem;
+            margin-left: 0.2rem;
+        }
+        .logo:hover {
+            background: transparent;
+            color: #e6ff00;
+            border: none;
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+        }
+        nav a:hover {
+            background: #e6ff00;
+            color: #0d0d0d;
+            border-bottom: 2px solid #e6ff00;
+        }
+        .tel-link {
+            background: #e6ff00;
+            color: #0d0d0d !important;
+            padding: 0.5rem 1.2rem !important;
+            font-weight: 900;
+            border: 2px solid #e6ff00;
+            transition: all 0.2s;
+        }
+        .tel-link:hover {
+            background: #0d0d0d;
+            color: #e6ff00 !important;
+            border: 2px solid #e6ff00;
+        }
+
+        /* HAMBURGER MENU */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 5px;
+        }
+        .hamburger-menu span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background: #e6ff00;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: flex;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #0d0d0d;
+                padding: 1rem 0;
+                gap: 1rem;
+                border-top: 2px solid #e6ff00;
+                margin-top: 1rem;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            header .container {
+                flex-wrap: wrap;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .logo {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* CUSTOM STYLES FOR THIS PAGE */
+        .blog-post {
+            background: #1a1a1a;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid #e6ff00;
+            box-shadow: 8px 8px 0 #e6ff00;
+        }
+        .blog-post .meta {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+        .blog-post .highlight-box {
+            background: #0d0d0d;
+            border-left: 6px solid #e6ff00;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        .blog-post .highlight-box p {
+            color: #e6ff00;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .blog-post ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        .blog-post ul li {
+            list-style: square;
+            color: #e6ff00;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .blog-post ul li span {
+            color: #ccc;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+        .blog-post .cta-section {
+            background: #e6ff00;
+            color: #0d0d0d;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border: 2px solid #fff;
+        }
+        .blog-post .cta-section h3 {
+            color: #0d0d0d;
+            margin-bottom: 1rem;
+        }
+        .blog-post .cta-section a {
+            display: inline-block;
+            background: #0d0d0d;
+            color: #e6ff00;
+            padding: 0.8rem 2rem;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: 2px solid #0d0d0d;
+            transition: all 0.2s;
+        }
+        .blog-post .cta-section a:hover {
+            background: #e6ff00;
+            color: #0d0d0d;
+            border: 2px solid #0d0d0d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">강서<span>셔츠룸</span></a>
+            <div class="hamburger-menu" onclick="document.querySelector('nav ul').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/list">업소목록</a></li>
+                    <li><a href="/blog">블로그</a></li>
+                    <li><a href="/review">리뷰</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="padding-top: 2rem;">
+            <h1>강서 셔츠룸 모음<br>블로그</h1>
+            <p style="font-size: 1.2rem; color: #e6ff00; margin-bottom: 2rem;">가짜 리뷰는 없다. 오직 직설적인 평가와 생생한 현장 경험만 담는다.</p>
+        </section>
+
+        <section class="container">
+            <article class="blog-post">
+                <div class="meta">2025.03.15 | 작성자: 운영진 | 카테고리: 시스템 분석</div>
+                <h2>강서 셔츠룸 모음, 진짜 고르는 법</h2>
+                <p>야, 형들. 강서구 셔츠룸 지금 난리 났다. 왜? 선택지가 너무 많아서 오히려 고민된다고. 근데 여기서 중요한 건 하나야. <strong>가격과 시스템, 그리고 현장 분위기</strong>. 이 세 가지를 모르면 무조건 호구 잡힌다. 내가 직접 발로 뛰고 경험한 내용만 박살내서 알려준다.</p>
+
+                <div class="highlight-box">
+                    <p>"강서 셔츠룸 모음, 진짜는 가격이 아니라 시스템으로 승부한다"</p>
+                </div>
+
+                <h3>1. 왜 강서구 셔츠룸이 핫한가?</h3>
+                <p>서울 서쪽, 강서구. 여기는 다른 지역이랑 완전 달라. 업소들 간의 경쟁이 미친 듯이 치열하다. 그래서 퀄리티로 승부 보는 곳이 많아. 예전에는 가격만 보고 갔는데, 지금은 시스템과 마인드가 중요해. 내가 본 강서 셔츠룸 중에서 진짜 찐은 따로 있다.</p>
+                <p><strong>포인트:</strong> 가성비만 쫓다가 낭패 보지 마라. 진짜는 초이스 시스템과 룸 컨디션에서 갈린다.</p>
+
+                <h3>2. 시스템 분석: 이건 알고 가자</h3>
+                <p>셔츠룸 시스템, 다들 알지? 근데 강서는 좀 달라. 몇 가지 핵심만 정리한다.</p>
+                <ul>
+                    <li><span><strong>초이스 방식</strong>: 라인업이 실시간으로 바뀐다. 미리 전화해서 확인해라. 010-6279-0862</span></li>
+                    <li><span><strong>룸 시스템</strong>: 일부 업소는 프라이빗 룸, 일부는 오픈형. 내 취향은 프라이빗. 분위기 압도적.</span></li>
+                    <li><span><strong>가격대</strong>: 기본 13~18만 원 사이. 서비스에 따라 다르니 꼭 물어봐라.</span></li>
+                    <li><span><strong>추가 서비스</strong>: 이건 현장에서 직접 협의. 말로 설명 못 한다. 직접 경험해라.</span></li>
+                </ul>
+
+                <h3>3. 진짜 후기: 강서 셔츠룸 모음 찐 추천</h3>
+                <p>내가 최근에 다녀온 곳 중에 하나. 위치는 강서구 메인 거리에서 살짝 안쪽. 외관은 별로였는데, 들어가자마자 분위기 반전. 룸도 넓고 조명도 적당했다. 가장 중요한 건 직원들 마인드. 불편한 거 하나 없었음. 가격은 15만 원. 시스템은 깔끔. 다시 가고 싶은 곳.</p>
+                <p>야, 여기서 중요한 건 <strong>리뷰 믿지 말고 직접 전화해</strong>. 그래야 진짜 정보를 얻을 수 있다. 내가 항상 하는 방법이다. 전화 한 통이면 모든 게 해결된다.</p>
+
+                <div class="cta-section">
+                    <h3>지금 당장 전화해서 확인해라</h3>
+                    <p style="color: #0d0d0d; font-size: 1.1rem;">가짜 정보에 속지 마라. 직접 물어보는 게 가장 빠르다.</p>
+                    <a href="tel:010-6279-0862">010-6279-0862</a>
+                </div>
+
+                <h3>4. 결론: 강서 셔츠룸 모음, 이렇게 골라라</h3>
+                <p>형들, 정리한다. 강서구 셔츠룸 고를 때는 아래 세 가지만 기억해라.</p>
+                <ul>
+                    <li><span><strong>첫째, 전화해라.</strong> 미리 시스템과 가격 확인. 번호는 010-6279-0862</span></li>
+                    <li><span><strong>둘째, 시스템을 따져라.</strong> 초이스, 룸, 서비스. 하나라도 마음에 안 들면 거른다.</span></li>
+                    <li><span><strong>셋째, 현장 분위기를 봐라.</strong> 사진과 실제는 다르다. 직접 가서 확인해라.</span></li>
+                </ul>
+                <p>이거만 알면 강서 셔츠룸에서 절대 호구 안 된다. 나머지는 직접 경험해봐라. 궁금하면 전화해. 010-6279-0862. 끝.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer style="background: #0d0d0d; border-top: 4px solid #e6ff00; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container" style="text-align: center;">
+            <p style="color: #888; font-size: 0.9rem;">&copy; 2025 강서 셔츠룸 모음. All rights reserved. | <a href="tel:010-6279-0862">010-6279-0862</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // 모바일 메뉴 토글
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
